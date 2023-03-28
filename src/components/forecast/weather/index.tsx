@@ -10,8 +10,6 @@ type Props = {
 };
 
 export default function Weather({ value } : Props) {
-
-    console.log("values", value)
     return (
         <div className="container-forescast">
             {value?.map((e : List_Interface) => (
