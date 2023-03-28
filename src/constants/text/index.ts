@@ -1,4 +1,5 @@
-export const Description = {
+
+export const Description : any = {
     "clear sky": "Cielo Despejado",
     "few clouds": "Pocas Nubes",
     "scattered clouds": "Nubes Dispersas",
