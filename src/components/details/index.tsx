@@ -33,10 +33,10 @@ export default function Details() {
                         {Math.min(data.main.temp_min)} °C
                     </Descriptions.Item>
                     <Descriptions.Item label="Nivel del Suelo">
-                        {data.main.grnd_level}
+                        {data.main.grnd_level ? data.main.grnd_level : "-"}
                     </Descriptions.Item>
                     <Descriptions.Item label="Nivel del Mar">
-                        {data.main.sea_level}
+                        {data.main.sea_level ? data.main.sea_level : "-"}
                     </Descriptions.Item>
                 </Descriptions>
             ) : (
