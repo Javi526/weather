@@ -28,7 +28,7 @@ export default function WeatherView() {
                     <div className="container-description">
                         <p className="p-2">{Description[data.weather[0].description]}</p>
                         <p className="p-2">
-                            {data.main.temp_max} / {data.main.temp_min} °C
+                            {data.main.temp_min} / {data.main.temp_max} °C
                         </p>
                     </div>
                 </div>
