@@ -18,10 +18,10 @@ export const HookContextSearch = ({ children } : Props) => {
         if (state.city) {
             try {
                 const { data } = await axios.get(ENDPOINTS.SEARCH(`${state.city}`));
-                if (data.cod === 200) dispatch({ type: FETCH_SEARCH_SUCCESS, payload: data });
+                dispatch({ type: FETCH_SEARCH_SUCCESS, payload: data });
             } catch (err) {
                     openNotification("topRight", state.city)
-                    dispatch({ type: FETCH_SEARCH_ERROR, payload: err });
+                    dispatch({ type: FETCH_SEARCH_ERROR });
             }
         }
     }, [state.city]);

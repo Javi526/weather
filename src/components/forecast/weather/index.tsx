@@ -2,24 +2,28 @@ import { FirstLetter } from "@/utils";
 import { WeekDay } from "@/utils/format/locale";
 import { ENDPOINTS } from "@/config";
 import { Description } from "@/constants/text";
+import { List_Interface } from "@/interface/forecast";
+import Image from "next/image";
 
 type Props = {
-    value: any
+    value: List_Interface[]
 };
 
 export default function Weather({ value } : Props) {
     return (
         <div className="container-forescast">
-            {value?.map((e : any) => (
+            {value?.map((e : List_Interface) => (
                 <div className="card-forescast" key={e.dt_txt}>
                     <p className="card-forescast-p">
                         {FirstLetter(WeekDay(e.dt_txt).format("dddd"))}
                     </p>
                     <div  className="card-forescast-img">
-                        <img
+                        <Image
                             className="img"
                             src={ENDPOINTS.IMAGE(e.weather[0].icon)}
-                            alt={ENDPOINTS.IMAGE(e.weather[0].id)}
+                            alt={ENDPOINTS.IMAGE(`${e.weather[0].id}`)}
+                            width={80}
+                            height={80}
                         />
                     </div>
                     <div className="container-description">

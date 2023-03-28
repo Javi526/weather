@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Card } from "antd";
-import { Context } from "@/hooks/forescast";
+import { Context } from "@/hooks/forecast";
 import { useContext } from "react";
 import Spin from "@/components/loading";
 import { weekdayForecast } from "@/utils/weekdayForecast";

@@ -1,10 +1,10 @@
 import { FETCH_FORECAST_SUCCESS, FETCH_FORECAST_ERROR, FETCH_FORECAST_INITIAL, InitialHour } from "@/constants/forecast";
-import {weekdayForecast} from "@/utils/weekdayForecast";
+import { Forecast_Interface } from "@/interface/forecast";
 
 type Props = {
     loading: boolean,
     error: string,
-    data: any[],
+    data: Forecast_Interface | object,
     hour?: number
 };
 
@@ -17,7 +17,7 @@ interface Action {
 export const initialState : Props = {
     loading: true,
     error: "",
-    data: [],
+    data: {},
     hour: InitialHour
 };
 
@@ -35,7 +35,7 @@ export const reducer = (state: Props, action: Action): Props => {
         case FETCH_FORECAST_ERROR:
             return {
                 loading: false,
-                data: [],
+                data: {},
                 error: action.payload
             }
         default:

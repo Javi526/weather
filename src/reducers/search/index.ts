@@ -1,3 +1,4 @@
+import { Search_Data_Interface } from "@/interface/search";
 import {
     FETCH_SEARCH_SUCCESS,
     FETCH_SEARCH_ERROR,
@@ -8,13 +9,13 @@ import {
 type Props = {
     loading: boolean,
     error: boolean,
-    data: object,
+    data: Search_Data_Interface | object,
     city: string | undefined
 };
 
 interface Action {
     type: string;
-    payload: any;
+    payload?: any;
     city?: string;
 }
 

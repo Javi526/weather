@@ -4,7 +4,7 @@ import { Row, Col, Card } from "antd";
 import Details from "@/components/details";
 import WeatherForecast from "@/components/forecast";
 import WeatherView from "@/components/view";
-import { HookContextWeatherForecast } from "@/hooks/forescast";
+import { HookContextWeatherForecast } from "@/hooks/forecast";
 
 export default function Home() {
   return (

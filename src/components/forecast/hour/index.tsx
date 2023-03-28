@@ -1,8 +1,9 @@
 import { Select } from "antd";
 import { Schedules } from "@/utils/schedules";
 import { useContext } from "react";
-import { Context } from "@/hooks/forescast";
+import { Context } from "@/hooks/forecast";
 import { FETCH_FORECAST_SUCCESS } from "@/constants/forecast";
+import { Schedules_Interface } from "@/interface/schedules";
 
 export default function ForecastHour() {
     const { forecastState, forecastDispatch } = useContext(Context);
@@ -23,7 +24,7 @@ export default function ForecastHour() {
                 onChange={handleChange}
             >
                 <OptGroup label="Horas">
-                    {Schedules(hourStart).map((data : any) => (
+                    {Schedules(hourStart).map((data : Schedules_Interface) => (
                         <Option value={data.id} key={data.id}>{data.hours}</Option>
                     ))}
                 </OptGroup>

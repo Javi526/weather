@@ -1,8 +1,9 @@
 import dayjs from "dayjs";
+import { Schedules_Interface } from "@/interface/schedules";
 
 export const Schedules = (hour: number) => {
     let countStart : number = hour;
-    const array : any[] = [];
+    const array : Schedules_Interface[] = [];
     const hourStart = (num: number) : string => dayjs().set("hour", num).set("minute", 0).format("HH:mm A");
     let changeHour : string = `${hourStart(hour)}`;
     const zeroHour: string = `${dayjs().hour(0).set("minute", 0).format("HH:mm A")}`;

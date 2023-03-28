@@ -1,5 +1,5 @@
-import {createContext, ReactNode, useCallback, useContext, useEffect, useReducer} from "react";
-import {FETCH_FORECAST_SUCCESS, FETCH_FORECAST_ERROR, InitialHour} from "@/constants/forecast";
+import { createContext, ReactNode, useCallback, useContext, useEffect, useReducer } from "react";
+import { FETCH_FORECAST_SUCCESS, FETCH_FORECAST_ERROR, InitialHour } from "@/constants/forecast";
 import { initialState, reducer } from "@/reducers/forecast";
 import { Context as SearchContext } from "@/hooks/search";
 import { ENDPOINTS } from "@/config";
@@ -21,7 +21,7 @@ export const HookContextWeatherForecast = ({ children } : Props) => {
                 const response = await axios.get(ENDPOINTS.SEARCH_FORECAST(state.data.name));
                 forecastDispatch({ type: FETCH_FORECAST_SUCCESS, payload: response.data, hour: InitialHour });
             } catch (err) {
-                forecastDispatch({ type: FETCH_FORECAST_ERROR, payload: [] });
+                forecastDispatch({ type: FETCH_FORECAST_ERROR });
             }
         }
     }, [state.data?.name]);
