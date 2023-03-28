@@ -1,0 +1,18 @@
+/**
+ * API OPENWEATHERMAP
+ */
+
+const HOST = "https://api.openweathermap.org/data/2.5/";
+const APPID = "6de56b37b8e1dffd1ad7bf4b8bd90a20";
+
+interface Enpoints_Interface {
+    SEARCH: (city: string) => string,
+    SEARCH_FORECAST: (city: string)=> string;
+    IMAGE: (value: string) => string;
+}
+
+export const ENDPOINTS : Enpoints_Interface = {
+    SEARCH: (city: string) : string => `${HOST}weather?q=${city}&units=metric&appid=${APPID}`,
+    SEARCH_FORECAST: (city: string): string=> `${HOST}forecast?q=${city}&units=metric&appid=${APPID}`,
+    IMAGE: (value: string): string => `http://openweathermap.org/img/wn/${value}@2x.png`,
+};
