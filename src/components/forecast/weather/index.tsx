@@ -31,7 +31,7 @@ export default function Weather({ value } : Props) {
                             {Description[e.weather[0].description]}
                         </p>
                         <p className="p-2">
-                            {e.main.temp} / {e.main.temp_min} °C
+                            {e.main.temp} °C
                         </p>
                     </div>
                 </div>
