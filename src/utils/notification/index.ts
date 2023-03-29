@@ -18,9 +18,9 @@ export const openIpNotification = (placement : NotificationPlacement) => {
 };
 
 export const openLocationNotification = (placement : NotificationPlacement) => {
-    notification.error({
-        message: `Surgio un error`,
-        description: "Surgio un error, detectar su ubicación, se agregara un valor por default",
+    notification.info({
+        message: `Surgio un incoveniente`,
+        description: "No se pudo detectar su ubicación, se agregara un valor por default",
         placement,
     });
 };
