@@ -3,8 +3,8 @@ import {
     FETCH_SEARCH_SUCCESS,
     FETCH_SEARCH_ERROR,
     FETCH_SEARCH_INITIAL,
-    City
 } from "@/constants/search";
+import { Address } from "@/utils/location";
 
 type Props = {
     loading: boolean,
@@ -23,7 +23,7 @@ export const initialState : Props = {
     loading: true,
     error: true,
     data: {},
-    city: City
+    city: Address
 };
 
 export const reducer = (state: Props, action: Action): Props => {
@@ -41,7 +41,7 @@ export const reducer = (state: Props, action: Action): Props => {
             return {
                 loading: false,
                 data: state.data,
-                city: City,
+                city: Address,
                 error: true
             }
         default:
